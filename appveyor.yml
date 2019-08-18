@@ -1,0 +1,10 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+configuration:
+- Release
+install:
+- cmd: >-
+    nuget restore
+build:
+  publish_aspnet_core: true
+  verbosity: minimal
