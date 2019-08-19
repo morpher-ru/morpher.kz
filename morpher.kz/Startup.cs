@@ -29,8 +29,9 @@ namespace morpher.kz
             {
                 HttpResponse response = context.Response;
                 response.StatusCode = 302;
-                response.Headers.Add("location", "http://morpher.ru/DemoKZ.aspx");
-                await response.WriteAsync("Moved temporarily.");
+                const string url = "http://morpher.ru/DemoKZ.aspx";
+                response.Headers.Add("location", url);
+                await response.WriteAsync($"Склонение по падежам на казахском: <a href='{url}'>{url}</a>");
             });
         }
     }
